@@ -17,7 +17,8 @@ const Calculator = () => {
                     setResult("Error");
                     return;
                 }
-
+                //  Safe single-line ESLint ignore for eval-like function
+                // eslint-disable-next-line no-new-func
                 const evalResult = Function(`"use strict"; return (${display})`)();
 
                 if (evalResult === Infinity) setResult("Infinity");
